@@ -1,29 +1,23 @@
 import { useEffect, useState } from "react";
-import { Button } from "./components/Button";
+
+let gameLoaded = false;
 
 const Game = () => {
   const [loading, setLoading] = useState(false);
-  const [startGame, setStartGame] = useState(false);
 
   useEffect(() => {
     const run = async () => {
-      console.log("Loading bevy");
       setLoading(true);
       const { main } = await import("./game");
       setLoading(false);
       main();
     };
 
-    if (startGame) {
+    if (!gameLoaded) {
+      gameLoaded = true;
       run();
     }
-  }, [startGame]);
-
-  useEffect(() => {
-    if (!startGame) {
-      setStartGame(true);
-    }
-  }, [startGame]);
+  }, []);
 
   const statusText = loading ? <h1 className="text-4xl text-center my-4">Loading your Prize...</h1> : null;
 

@@ -1,16 +1,5 @@
-use std::thread;
-use std::time::Duration;
-
-use bevy::asset::Assets;
-use bevy::ecs::system::{Commands, ResMut};
-use bevy::gltf::Gltf;
-use bevy::log::info;
-use bevy::pbr::CascadeShadowConfigBuilder;
 use bevy::prelude::*;
-use bevy::render::{
-  color::Color,
-  mesh::{shape, Mesh},
-};
+
 use bevy_scene_hook::{HookedSceneBundle, SceneHook};
 use smooth_bevy_cameras::controllers::orbit::{OrbitCameraBundle, OrbitCameraController};
 

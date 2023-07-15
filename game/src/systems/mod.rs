@@ -1,7 +1,7 @@
 use bevy::{
   a11y::AccessibilityPlugin, app::PluginGroupBuilder, core_pipeline::CorePipelinePlugin, diagnostic::DiagnosticsPlugin,
   gltf::GltfPlugin, input::InputPlugin, log::LogPlugin, pbr::PbrPlugin, prelude::*, render::RenderPlugin,
-  scene::ScenePlugin, sprite::SpritePlugin, text::TextPlugin, time::TimePlugin, ui::UiPlugin, window::WindowResolution,
+  scene::ScenePlugin, sprite::SpritePlugin, text::TextPlugin, time::TimePlugin, ui::UiPlugin,
   winit::WinitPlugin,
 };
 
