@@ -25,12 +25,12 @@ const Game = () => {
     }
   }, [startGame]);
 
-  const statusText = loading ? <h1 className="text-4xl text-center my-4">Loading Game...</h1> : null;
+  const statusText = loading ? <h1 className="text-4xl text-center my-4">Loading your Prize...</h1> : null;
 
   return (
-    <>
+    <> 
       {statusText}
-      <canvas className="bevy-instance__canvas" id="bevy" onContextMenu={(e) => e.preventDefault()}></canvas>
+      <canvas className="bevy-instance__canvas overflow-hidden" id="bevy" onContextMenu={(e) => e.preventDefault()}></canvas>
     </>
   );
 };
