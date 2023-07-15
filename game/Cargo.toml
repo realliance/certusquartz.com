@@ -1,0 +1,25 @@
+[package]
+name = "game"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "app"
+path = "src/main.rs"
+
+[lib]
+name = "app"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+
+[dependencies]
+bevy = "0.10"
+cfg-if = "1.0"
+bevy-scene-hook = "6"
+smooth-bevy-cameras = "0.8"
+rand = "0.8"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = { version = "0.2.87", features = [ "serde-serialize" ] }
+console_error_panic_hook = "0.1.7"
