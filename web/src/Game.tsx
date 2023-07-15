@@ -19,17 +19,16 @@ const Game = () => {
     }
   }, [startGame]);
 
-  const joinForm = !startGame ? (
-    <div className="flex flex-col gap-3">
-      <Button disabled={false} text="Join Server" onClick={() => setStartGame(true)} />
-    </div>
-  ) : null;
+  useEffect(() => {
+    if (!startGame) {
+      setStartGame(true);
+    }
+  }, [startGame]);
 
   const statusText = loading ? <h1 className="text-4xl text-center my-4">Loading Game...</h1> : null;
 
   return (
     <>
-      {joinForm}
       {statusText}
       <canvas className="bevy-instance__canvas" id="bevy" onContextMenu={(e) => e.preventDefault()}></canvas>
     </>
