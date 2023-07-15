@@ -1,6 +1,6 @@
 
 install-global-deps:
-  cargo install wasm-bindgen-cli@0.2.87
+  cargo install wasm-bindgen-cli
 
 serve: build-client
   yarn workspace web dev
@@ -23,4 +23,3 @@ client-wasm-bindgen: build-wasm
 
 build-wasm:
   cargo build -p game --lib --profile wasm-release --target wasm32-unknown-unknown
-
